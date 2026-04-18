@@ -111,7 +111,7 @@ class CalculatorTest {
     //roten Tests ab hier
     @Test
     @DisplayName("should display result of substraction of a negative number ")
-    void testMinus() {
+    void testSubstractionNegativeNumber() {
         Calculator calc = new Calculator();
 
         calc.pressNegativeKey();
