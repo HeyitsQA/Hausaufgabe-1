@@ -91,8 +91,9 @@ class CalculatorTest {
 
     //TODO hier weitere Tests erstellen
 
+    // Für den grünen Test
     @Test
-    @DisplayName ("should display result after substracting two nummbers")
+    @DisplayName ("should display result after substracting two positive nummbers")
     void testSubstracting() {
         Calculator calc = new Calculator();
 
@@ -106,6 +107,25 @@ class CalculatorTest {
 
         assertEquals(expected,actual);
     }
+
+    //roten Tests ab hier
+    @Test
+    @DisplayName("should display result of substraction of a negative number ")
+    void testMinus() {
+        Calculator calc = new Calculator();
+
+        calc.pressNegativeKey();
+        calc.pressDigitKey(9);
+        calc.pressBinaryOperationKey("-");
+        calc.pressDigitKey(5);
+        calc.pressEqualsKey();
+
+        String expected = "-14";
+        String actual = calc.readScreen();
+
+        assertEquals(expected,actual);
+    }
+
 
 }
 
