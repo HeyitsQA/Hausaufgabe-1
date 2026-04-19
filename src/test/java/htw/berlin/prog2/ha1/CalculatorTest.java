@@ -126,6 +126,23 @@ class CalculatorTest {
         assertEquals(expected,actual);
     }
 
+    @Test
+    @DisplayName("should display the last value of binary operation after entering Clear key")
+    void testClearKey() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(2);
+        calc.pressDigitKey(4);
+        calc.pressBinaryOperationKey("/");
+        calc.pressDigitKey(6);
+        calc.pressBinaryOperationKey("-");
+        calc.pressClearKey();
+
+        String expected = "4";
+        String actual = calc.readScreen();
+        assertEquals(expected,actual);
+
+    }
 
 }
 
